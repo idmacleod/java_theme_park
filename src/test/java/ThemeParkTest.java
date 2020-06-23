@@ -42,6 +42,6 @@ public class ThemeParkTest {
 
     @Test
     public void hasStalls() {
-        assertEquals(stalls, themePark.getAttractions());
+        assertEquals(stalls, themePark.getStalls());
     }
 }
