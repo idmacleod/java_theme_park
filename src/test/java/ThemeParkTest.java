@@ -11,6 +11,7 @@ import stalls.TobaccoStall;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 
@@ -57,5 +58,12 @@ public class ThemeParkTest {
         themePark.visit(visitor, park);
         assertEquals(1, park.getVisitCount());
         assertEquals(1, visitor.getVisitedAttractions().size());
+    }
+
+    @Test
+    public void canGetAllReviews() {
+        HashMap<String, Integer> reviews = themePark.getAllReviews();
+        assertEquals(3, reviews.get("Jacks Drum"));
+        assertEquals(10, reviews.get("Blue Ridge"));
     }
 }
