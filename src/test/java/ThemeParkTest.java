@@ -53,11 +53,12 @@ public class ThemeParkTest {
     }
 
     @Test
-    public void canLogVisit() {
+    public void canVisit() {
         Visitor visitor = new Visitor(25, 1.7, 100.0);
         themePark.visit(visitor, park);
         assertEquals(1, park.getVisitCount());
         assertEquals(1, visitor.getVisitedAttractions().size());
+        assertEquals(91.60, visitor.getMoney(), 0.01);
     }
 
     @Test
