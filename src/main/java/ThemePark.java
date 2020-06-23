@@ -1,5 +1,6 @@
 import attractions.Attraction;
 import behaviours.IReviewed;
+import behaviours.ISecurity;
 import people.Visitor;
 import stalls.Stall;
 
@@ -41,5 +42,20 @@ public class ThemePark {
             allReviews.put(reviewed.getName(), reviewed.getRating());
         }
         return allReviews;
+    }
+
+    public ArrayList<IReviewed> getAllAllowedFor(Visitor visitor) {
+        ArrayList<IReviewed> allAllowed = new ArrayList<IReviewed>();
+        for (IReviewed reviewed : getAllReviewed()) {
+            if (reviewed instanceof ISecurity) {
+                ISecurity secureReviewed = (ISecurity) reviewed;
+                if (secureReviewed.isAllowedTo(visitor)) {
+                    allAllowed.add((IReviewed) secureReviewed);
+                }
+            } else {
+                allAllowed.add(reviewed);
+            }
+        }
+        return allAllowed;
     }
 }

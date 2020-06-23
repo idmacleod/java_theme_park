@@ -70,6 +70,8 @@ public class ThemeParkTest {
     @Test
     public void canGetAllAllowedFor() {
         Visitor youngHarry = new Visitor(5, 0.7, 10.0);
+        Visitor weeJack = new Visitor(90, 1.1, 10.0);
         assertEquals(2, themePark.getAllAllowedFor(youngHarry).size());
+        assertEquals(3, themePark.getAllAllowedFor(weeJack).size());
     }
 }
