@@ -36,7 +36,7 @@ public class PlaygroundTest {
     }
 
     @Test
-    public void canCheckIfAllowedToVisitor__true() {
+    public void canCheckIfAllowedToVisitor__false() {
         Visitor visitor = new Visitor(25, 1.7, 100);
         assertFalse(playground.isAllowedTo(visitor));
     }
