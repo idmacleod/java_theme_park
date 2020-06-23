@@ -66,4 +66,10 @@ public class ThemeParkTest {
         assertEquals((Integer) 3, allReviews.get("Jacks Drum"));
         assertEquals((Integer) 10, allReviews.get("Blue Ridge"));
     }
+
+    @Test
+    public void canGetAllAllowedFor() {
+        Visitor youngHarry = new Visitor(5, 0.7, 10.0);
+        assertEquals(2, themePark.getAllAllowedFor(youngHarry).size());
+    }
 }
