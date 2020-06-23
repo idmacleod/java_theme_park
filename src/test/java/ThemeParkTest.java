@@ -44,4 +44,9 @@ public class ThemeParkTest {
     public void hasStalls() {
         assertEquals(stalls, themePark.getStalls());
     }
+
+    @Test
+    public void canGetAllReviewed() {
+        assertEquals(4, themePark.getAllReviewed().size());
+    }
 }
