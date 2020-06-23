@@ -7,7 +7,6 @@ import people.Visitor;
 import static org.junit.Assert.*;
 
 public class RollercoasterTest {
-
     RollerCoaster rollerCoaster;
 
     @Before
@@ -46,5 +45,22 @@ public class RollercoasterTest {
     public void canCheckIfAllowedToVisitor__tooShort() {
         Visitor visitor = new Visitor(90, 1.2, 60.0);
         assertFalse(rollerCoaster.isAllowedTo(visitor));
+    }
+
+    @Test
+    public void canGetDefaultPrice() {
+        assertEquals(8.40, rollerCoaster.defaultPrice(), 0.01);
+    }
+
+    @Test
+    public void canGetPriceForVisitor() {
+        Visitor visitor = new Visitor(25, 1.7, 100.0);
+        assertEquals(8.40, rollerCoaster.priceFor(visitor), 0.01);
+    }
+
+    @Test
+    public void canGetPriceForTallVisitor() {
+        Visitor visitor = new Visitor(25, 2.10, 100.0);
+        assertEquals(16.80, rollerCoaster.priceFor(visitor), 0.01);
     }
 }
