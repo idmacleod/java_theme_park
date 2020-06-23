@@ -25,7 +25,7 @@ public abstract class Attraction implements IReviewed {
         return visitCount;
     }
 
-    public void setVisitCount(int visitCount) {
-        this.visitCount = visitCount;
+    public void incrementVisitCount() {
+        visitCount++;
     }
 }

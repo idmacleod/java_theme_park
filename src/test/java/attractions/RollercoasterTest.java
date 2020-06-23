@@ -63,4 +63,11 @@ public class RollercoasterTest {
         Visitor visitor = new Visitor(25, 2.10, 100.0);
         assertEquals(16.80, rollerCoaster.priceFor(visitor), 0.01);
     }
+
+    @Test
+    public void canIncrementVisitCount() {
+        rollerCoaster.incrementVisitCount();
+        rollerCoaster.incrementVisitCount();
+        assertEquals(2, rollerCoaster.getVisitCount());
+    }
 }
