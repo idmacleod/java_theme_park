@@ -31,13 +31,13 @@ public class PlaygroundTest {
 
     @Test
     public void canCheckIfAllowedToVisitor__true() {
-        Visitor visitor = new Visitor(14, 1.2, 40);
+        Visitor visitor = new Visitor(14, 1.2, 40.0);
         assertTrue(playground.isAllowedTo(visitor));
     }
 
     @Test
     public void canCheckIfAllowedToVisitor__false() {
-        Visitor visitor = new Visitor(25, 1.7, 100);
+        Visitor visitor = new Visitor(25, 1.7, 100.0);
         assertFalse(playground.isAllowedTo(visitor));
     }
 }

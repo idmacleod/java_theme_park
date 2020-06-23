@@ -33,13 +33,13 @@ public class TobaccoStallTest {
 
     @Test
     public void canCheckIfAllowedToVisitor__true() {
-        Visitor visitor = new Visitor(25, 1.7, 100);
+        Visitor visitor = new Visitor(25, 1.7, 100.0);
         assertTrue(tobaccoStall.isAllowedTo(visitor));
     }
 
     @Test
     public void canCheckIfAllowedToVisitor__false() {
-        Visitor visitor = new Visitor(14, 1.2, 40);
+        Visitor visitor = new Visitor(14, 1.2, 40.0);
         assertFalse(tobaccoStall.isAllowedTo(visitor));
     }
 }

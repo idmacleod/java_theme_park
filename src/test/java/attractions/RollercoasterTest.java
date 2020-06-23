@@ -32,19 +32,19 @@ public class RollercoasterTest {
 
     @Test
     public void canCheckIfAllowedToVisitor__true() {
-        Visitor visitor = new Visitor(25, 1.7, 100);
+        Visitor visitor = new Visitor(25, 1.7, 100.0);
         assertTrue(rollerCoaster.isAllowedTo(visitor));
     }
 
     @Test
     public void canCheckIfAllowedToVisitor__tooYoung() {
-        Visitor visitor = new Visitor(11, 1.5, 50);
+        Visitor visitor = new Visitor(11, 1.5, 50.0);
         assertFalse(rollerCoaster.isAllowedTo(visitor));
     }
 
     @Test
     public void canCheckIfAllowedToVisitor__tooShort() {
-        Visitor visitor = new Visitor(90, 1.2, 60);
+        Visitor visitor = new Visitor(90, 1.2, 60.0);
         assertFalse(rollerCoaster.isAllowedTo(visitor));
     }
 }
