@@ -3,6 +3,7 @@ import attractions.Park;
 import attractions.RollerCoaster;
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 import stalls.IceCreamStall;
 import stalls.ParkingSpot;
 import stalls.Stall;
@@ -48,5 +49,13 @@ public class ThemeParkTest {
     @Test
     public void canGetAllReviewed() {
         assertEquals(4, themePark.getAllReviewed().size());
+    }
+
+    @Test
+    public void canLogVisit() {
+        Visitor visitor = new Visitor(25, 1.7, 100.0);
+        themePark.visit(visitor, park);
+        assertEquals(1, park.getVisitCount());
+        assertEquals(1, visitor.getVisitedAttractions().size());
     }
 }
