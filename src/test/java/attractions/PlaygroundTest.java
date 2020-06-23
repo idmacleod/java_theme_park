@@ -2,8 +2,9 @@ package attractions;
 
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class PlaygroundTest {
     Playground playground;
@@ -26,5 +27,17 @@ public class PlaygroundTest {
     @Test
     public void hasVisitCount() {
         assertEquals(0, playground.getVisitCount());
+    }
+
+    @Test
+    public void canCheckIfAllowedToVisitor__true() {
+        Visitor visitor = new Visitor(14, 1.2, 40);
+        assertTrue(playground.isAllowedTo(visitor));
+    }
+
+    @Test
+    public void canCheckIfAllowedToVisitor__true() {
+        Visitor visitor = new Visitor(25, 1.7, 100);
+        assertFalse(playground.isAllowedTo(visitor));
     }
 }
