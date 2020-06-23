@@ -7,14 +7,12 @@ import people.Visitor;
 import static org.junit.Assert.assertEquals;
 
 public class DodgemTest {
-
     Dodgems dodgems;
 
     @Before
     public void setUp() throws Exception {
         dodgems = new Dodgems("Bumper Cars", 5);
     }
-
 
     @Test
     public void hasName() {
