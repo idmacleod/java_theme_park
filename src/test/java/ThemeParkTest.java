@@ -62,8 +62,8 @@ public class ThemeParkTest {
 
     @Test
     public void canGetAllReviews() {
-        HashMap<String, Integer> reviews = themePark.getAllReviews();
-        assertEquals(3, reviews.get("Jacks Drum"));
-        assertEquals(10, reviews.get("Blue Ridge"));
+        HashMap<String, Integer> allReviews = themePark.getAllReviews();
+        assertEquals((Integer) 3, allReviews.get("Jacks Drum"));
+        assertEquals((Integer) 10, allReviews.get("Blue Ridge"));
     }
 }
